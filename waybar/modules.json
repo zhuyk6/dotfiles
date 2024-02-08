@@ -290,8 +290,15 @@
 
     // Dunst
     "custom/dunst": {
-        "exec": "~/dotfiles/scripts/dunst.nu",
-        "on-click": "dunstctl set-paused toggle",
-        "restart-interval": 1
+      "exec": "~/dotfiles/scripts/dunst.nu",
+      "on-click": "dunstctl set-paused toggle",
+      "restart-interval": 1
+    },
+
+    // Hyprland Submap
+    "hyprland/submap": {
+      "format": "✌️ {}",
+      "max-length": 8,
+      "tooltip": false
     }
 }
