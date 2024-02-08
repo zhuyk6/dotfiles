@@ -68,7 +68,15 @@ window#waybar {
     border-radius: 15px;
     min-width: 40px;
     transition: all 0.3s ease-in-out;
-    opacity:1.0;
+    opacity: 1.0;
+}
+
+#workspaces button.urgent {
+    background-color: #AB4242;
+    color: @textcolor1;
+    border-radius: 15px;
+    min-width: 20px;
+    opacity: 1.0;
 }
 
 #workspaces button:hover {
