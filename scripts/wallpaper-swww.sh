@@ -12,7 +12,7 @@
 # ----------------------------------------------------- 
 # Select wallpaper
 # ----------------------------------------------------- 
-selected=$(ls -1 ~/Pictures/wallpaper | grep "jpg" | wofi --dmenu -p "Wallpapers")
+selected=$(ls -1 ~/Pictures/wallpaper | grep "jpg" | tofi --prompt-text "Wallpapers:")
 
 if [ "$selected" ]; then
 

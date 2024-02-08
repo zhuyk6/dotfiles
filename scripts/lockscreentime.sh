@@ -15,11 +15,12 @@ timesleep=900
 
 if [ -f "/usr/bin/swayidle" ]; then
     echo "swayidle is installed."
-    swayidle -w timeout $timeswaylock 'swaylock -f' \
-                timeout $timeoff 'hyprctl dispatch dpms off' \
-                resume 'hyprctl dispatch dpms on' \
-                timeout $timesleep 'systemctl suspend' \
-                before-sleep 'swaylock -f'
+    
+    swayidle -w \
+      timeout $timeswaylock 'swaylock -f' \
+      timeout $timeoff 'if pgrep swaylock; then hyprctl dispatch dpms off; fi' \
+      # resume 'hyprctl dispatch dpms on' \
+      before-sleep 'swaylock -f'
 else
     echo "swayidle not installed."
 fi;

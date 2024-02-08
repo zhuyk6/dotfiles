@@ -10,14 +10,14 @@
 # ----------------------------------------------------- 
 
 case $1 in
-    d) cliphist list | wofi --dmenu -p "Delete a history" | cliphist delete
-       ;;
+      d)  cliphist list | wofi --dmenu -p "Delete a history" | cliphist delete
+          ;;
 
-    w) if [ `echo -e "Clear\nCancel" | wofi --dmenu` == "Clear" ] ; then
+      w)  if [ `echo -e "Clear\nCancel" | wofi --dmenu` == "Clear" ] ; then
             cliphist wipe
-       fi
-       ;;
+          fi
+          ;;
 
-    *) cliphist list | wofi --dmenu -p "Choose a history" | cliphist decode | wl-copy
-       ;;
+      *)  cliphist list | wofi --dmenu -p "Choose a history" | cliphist decode | wl-copy
+          ;;
 esac

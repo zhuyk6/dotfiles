@@ -32,11 +32,14 @@
 
     // Modules Left
     "modules-left": [
-        "custom/appmenu",
+        // "custom/appmenu",
+        "custom/exit",
+        "custom/cliphist",
+        "tray",
         "custom/wallpaper",
         // "custom/waybarthemes",          
         "wlr/taskbar",
-        "group/quicklinks",
+        // "group/quicklinks",
         "hyprland/window"
     ],
 
@@ -47,15 +50,13 @@
 
     // Modules Right    
     "modules-right": [
-        "custom/updates",
+        // "custom/updates",
+        "group/hardware",
         "pulseaudio",
         // "bluetooth",
         "backlight",
         "battery", 
-        "group/hardware",
-        "custom/cliphist",
         "network",
-        "custom/exit",
         "clock"
     ],
 

@@ -17,7 +17,8 @@ option3="Fullscreen (delay 3 sec)"
 
 options="$option2\n$option3"
 
-choice=$(echo -e "$options" | wofi --dmenu --prompt "Take Screenshot")
+# choice=$(echo -e "$options" | wofi --dmenu --prompt "Take Screenshot")
+choice=$(echo -e "$options" | tofi --prompt-text "Take Screenshot:")
 
 case $choice in
     $option2)
