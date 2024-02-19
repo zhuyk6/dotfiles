@@ -4,6 +4,18 @@ theme = "zed_onedark"
 line-number = "relative"
 bufferline = "multiple"
 
+[editor.statusline]
+left = ["mode", "spinner", "diagnostics"]
+center = ["file-name", "read-only-indicator", "file-modification-indicator"]
+right = [
+  "selections",
+  "register",
+  "position",
+  "position-percentage",
+  "file-encoding",
+  "file-type",
+]
+
 [editor.cursor-shape]
 insert = "bar"
 normal = "block"
@@ -17,7 +29,7 @@ space = "·"
 nbsp = "⍽"
 tab = "→"
 newline = "⏎"
-tabpad = "·" # Tabs will look like "→···" (depending on tab width)
+tabpad = "·"  # Tabs will look like "→···" (depending on tab width)
 
 [editor.lsp]
 display-inlay-hints = true

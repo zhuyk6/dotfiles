@@ -4,3 +4,21 @@ command = "clippy"
 [[language]]
 name = "rust"
 language-servers = ["rust-analyzer"]
+
+[[language]]
+name = "toml"
+auto-format = true
+formatter = { command = "taplo", args = ["fmt", "-"] }
+
+[[language]]
+name = "python"
+auto-format = true
+roots = ["pyproject.toml"]
+language-servers = ["pyright", "ruff"]
+
+[language-server.pyright.config.python.analysis]
+typeCheckingMode = "basic"
+
+[language-server.ruff]
+command = "ruff-lsp"
+# config = { settings = { run = "onSave" } }
