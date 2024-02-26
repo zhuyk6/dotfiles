@@ -9,7 +9,7 @@
 // ----------------------------------------------------- 
 //
 {
-    // Workspaces
+    // Hyprland Workspaces
     "hyprland/workspaces" : {
         "on-click": "activate",
         "active-only": false,
@@ -19,10 +19,18 @@
           "urgent": "",
           "active": "",
           "default": ""
-        },
-        // "persistent-workspaces": {
-        //   "*": 5
-        // }       
+        }
+    },
+
+    // Workspaces
+    "wlr/workspaces": {
+        "on-click" : "active",
+        "format": "",
+        "format-icons": {
+            "urgent": "",
+            "active": "",
+            "default": ""
+        }
     },
 
     // Taskbar
