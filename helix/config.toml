@@ -31,6 +31,9 @@ tab = "→"
 newline = "⏎"
 tabpad = "·"  # Tabs will look like "→···" (depending on tab width)
 
+[editor.soft-wrap]
+enable = true
+
 [editor.lsp]
 display-inlay-hints = true
 

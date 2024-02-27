@@ -12,7 +12,7 @@
 }
 {
     "label" : "logout",
-    "action" : "sleep 1; hyprctl dispatch exit",
+    "action" : "sleep 1; ~/dotfiles/scripts/logout.nu",
     "text" : "Logout",
     "keybind" : "e"
 }
