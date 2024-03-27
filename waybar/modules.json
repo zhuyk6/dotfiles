@@ -271,7 +271,9 @@
             "car": "",
             "default": ["", " ", " "]
         },
-        "on-click": "pavucontrol"
+        "on-click": "pavucontrol",
+        "on-click-right": "pactl set-sink-mute 0 toggle",
+        "reverse-scrolling": true
     },
 
     // Bluetooth
@@ -284,9 +286,11 @@
 
     // Backlight
     "backlight": {
-      "device": "intel_backlight",
-      "format": "{icon} {percent}%",
-      "format-icons": ["", ""]
+        // "device": "intel_backlight",
+        "device": "amdgpu_bl1",
+        "format": "{icon} {percent}%",
+        "format-icons": ["", ""],
+        "reverse-scrolling": true
     },
 
     // Other

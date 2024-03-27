@@ -1,8 +1,9 @@
-theme = "zed_onedark"
+theme = "dracula"
 
 [editor]
 line-number = "relative"
 bufferline = "multiple"
+color-modes = true
 
 [editor.statusline]
 left = ["mode", "spinner", "diagnostics"]
