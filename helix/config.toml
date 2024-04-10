@@ -4,6 +4,7 @@ theme = "dracula"
 line-number = "relative"
 bufferline = "multiple"
 color-modes = true
+popup-border = "all"
 
 [editor.statusline]
 left = ["mode", "spinner", "diagnostics"]
