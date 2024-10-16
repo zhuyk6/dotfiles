@@ -105,8 +105,8 @@
     // Wallpaper
     "custom/wallpaper": {
         "format": "",
-        "on-click": "~/dotfiles/scripts/wallpaper-swww.sh",
-        "on-click-right": "~/dotfiles/scripts/updatewal-swww.sh",
+        "on-click": "~/dotfiles/scripts/wallpaper_hyprpaper.sh select update",
+        "on-click-right": "~/dotfiles/scripts/wallpaper_hyprpaper.sh update",
         "tooltip": false
     },
 
