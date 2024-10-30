@@ -9,13 +9,17 @@
 #              |_|                    
 # By zhuyk6 
 
+def command [promp: string] {
+    # tofi --prompt-text $promp
+    rofi -dmenu -config ~/.config/rofi/config-dmenu.rasi -mesg $promp -p 'Clipboard'
+}
 
-# A script that using tofi to manage clipboard
+# A script that manages clipboard
 def main [] {
-    let mode: string = (echo "Copy\nDelete\nClear" | tofi --prompt-text 'Choose a mode:' | str trim)
+    let mode: string = (echo "Copy\nDelete\nClear" | command 'Choose a mode:' | str trim)
     match $mode {
         Copy => (main copy)
-        Delete => (main delete)
+        Delete => (main repeat-delete)
         Clear => (main clear)
         _ => ()
     }
@@ -23,7 +27,7 @@ def main [] {
 
 # Copy one item from clipboard
 def "main copy" [] {
-    let choose: string = (cliphist list | tofi --prompt-text 'Copy:')
+    let choose: string = (cliphist list | command 'Copy:')
     if ($choose | str length) > 0 {
         $choose | cliphist decode | wl-copy
     } else {
@@ -33,7 +37,7 @@ def "main copy" [] {
 
 # Delete one item from clipboard
 def "main delete" [] {
-    let choose: string = (cliphist list | tofi --prompt-text 'Delete:')
+    let choose: string = (cliphist list | command 'Delete:')
     if ($choose | str length) > 0 {
         $choose | cliphist delete
     } else {
@@ -41,9 +45,20 @@ def "main delete" [] {
     }
 }
 
+def "main repeat-delete" [] {
+    loop {
+        let choose: string = (cliphist list | command 'Delete:')
+        if ($choose | str length) > 0 {
+            $choose | cliphist delete
+        } else {
+            break
+        }
+    }
+}
+
 # Clear clipboard
 def "main clear" [] {
-    if (echo "Yes\nNo" | tofi --prompt-text 'Clear?' | str trim) == "Yes" {
+    if (echo "Yes\nNo" | command 'Clear?' | str trim) == "Yes" {
         cliphist wipe
     } else {
         echo "Nothing to do"
