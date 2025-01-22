@@ -13,15 +13,8 @@
 
     // Position TOP
     "layer": "top",
-    "margin-top": 14,
+    "margin-top": 5,
     "margin-bottom": 0,
-
-    // Position BOTTOM
-    // "position": "bottom",
-    // "margin-top": 0,
-    // "margin-bottom": 14,
-    
-    "layer": "top",
     "height": 32,
     "margin-left": 0,
     "margin-right": 0,
@@ -32,40 +25,49 @@
 
     // Modules Left
     "modules-left": [
-        // "custom/appmenu",
         "custom/exit",
         "custom/cliphist",
         "tray",
-        // "custom/wallpaper",
-        // "custom/waybarthemes",
-        "wlr/taskbar"
-        // "group/quicklinks",
-        // "hyprland/window"
+        "wlr/taskbar",
+        "niri/window"
     ],
 
     // Modules Center
-    // "modules-center": [
-    //     "wlr/workspaces"
-    // ],
+    "modules-center": [
+        "niri/workspaces"
+    ],
 
     // Modules Right    
     "modules-right": [
-        // "custom/updates",
         "group/hardware",
         "pulseaudio",
-        // "bluetooth",
         "backlight",
         "battery", 
         "network",
         "clock"
     ],
 
+    // niri workspaces
+    "niri/workspaces": {
+        "format": "{value}"
+    },
+    // niri window
+    "niri/window": {
+        "format": "{app_id} - {title}",
+        "rewrite": {
+            "firefox - (.*) - Mozilla Firefox": " $1",
+            "firefox - (.*) — Mozilla Firefox" : " $1",
+            "code - (.*) - (.*) - (.*) - Visual Studio Code": " ($3): $2 - $1",
+            "Alacritty - (.*)": "[  ] : $1 "
+        }
+    },
+
     // Group Quicklinks
     "group/quicklinks": {
         "orientation": "horizontal",
         "modules": [
             "custom/filemanager",
-            "custom/browser",
+            "custom/browser"
          ]
     },
 
