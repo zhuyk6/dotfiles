@@ -60,7 +60,7 @@ def "main repeat-delete" [] {
 def "main clear" [] {
     if (echo "Yes\nNo" | command 'Clear?' | str trim) == "Yes" {
         cliphist wipe
-        notify-send "Clipboard" "All history has been wiped."
+        notify-send "Clipboard" "History has been wiped."
     } else {
         echo "Nothing to do"
     }
