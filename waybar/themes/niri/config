@@ -58,7 +58,8 @@
             "firefox - (.*) - Mozilla Firefox": " $1",
             "firefox - (.*) — Mozilla Firefox" : " $1",
             "code - (.*) - (.*) - (.*) - Visual Studio Code": " ($3): $2 - $1",
-            "Alacritty - (.*)": "[  ] : $1 "
+            "Alacritty - (.*)": "[  ] : $1 ",
+            "kitty - (.*)": "[  ] : $1 "
         }
     },
 
