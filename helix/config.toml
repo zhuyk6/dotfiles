@@ -39,8 +39,8 @@ enable = true
 [editor.lsp]
 display-inlay-hints = true
 
-[keys.normal]
-";" = "command_mode"
+# [keys.normal]
+# ";" = "command_mode"
 
-[keys.insert]
-j = { k = "normal_mode" }
+# [keys.insert]
+# j = { k = "normal_mode" }
