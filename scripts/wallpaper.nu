@@ -11,6 +11,9 @@ def postprocess [filepath: string] {
     # pywal
     wal -q -i $filepath
 
+    # update mako's theme
+    ~/.config/mako/update-theme.sh
+
     # restart waybar
     systemctl --user restart waybar.service
 
@@ -23,7 +26,7 @@ def postprocess [filepath: string] {
     # $ret | get 0 | path expand | cp $in $BLURRED_WALLPAPER
     # $ret | get 1 | path expand | cp $in $SQUARE_WALLPAPER
 
-    print "post process done"
+    notify-send "Wallpaper" $"Wallpaper set to ($filepath | path basename)"
 }
 
 def main [] {}
@@ -45,7 +48,7 @@ def "main select" [filename: string] {
 
         postprocess $wallpaper
     } else {
-        log error $"File '$($filename)' not found"
+        log error $"File '($filename)' not found"
     }
 }
 
