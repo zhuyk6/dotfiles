@@ -7,6 +7,6 @@ def main [] {
     } else if $env.XDG_CURRENT_DESKTOP == "Hyprland" {
         hyprctl dispatch exit
     } else {
-        echo $"Not supported desktop: ($env.XDG_CURRENT_DESKTOP)"
+        notify-send -u critical $"Not supported desktop: ($env.XDG_CURRENT_DESKTOP)"
     }
 }

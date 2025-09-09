@@ -38,9 +38,12 @@ fi
 # ----------------------------------------------------- 
 # Loading the configuration and style file based on the username
 # ----------------------------------------------------- 
-if [[ $USER = "raabe" ]]
-then
-    waybar -c ~/dotfiles/waybar/themes${arrThemes[0]}/myconfig -s ~/dotfiles/waybar/themes${arrThemes[1]}/style.css &
-else
-    waybar -c ~/dotfiles/waybar/themes${arrThemes[0]}/config -s ~/dotfiles/waybar/themes${arrThemes[1]}/style.css &
-fi 
+# if [[ $USER = "raabe" ]]
+# then
+#     waybar -c ~/dotfiles/waybar/themes${arrThemes[0]}/myconfig -s ~/dotfiles/waybar/themes${arrThemes[1]}/style.css &
+# else
+#     waybar -c ~/dotfiles/waybar/themes${arrThemes[0]}/config -s ~/dotfiles/waybar/themes${arrThemes[1]}/style.css &
+# fi 
+
+waybar -c ~/dotfiles/waybar/themes/hyprland/config.jsonc -s ~/dotfiles/waybar/themes/hyprland/style.css
+

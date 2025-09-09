@@ -18,3 +18,7 @@
 @define-color color13 {color13};
 @define-color color14 {color14};
 @define-color color15 {color15};
+
+@define-color fontcolor {color15};
+@define-color backgroundcolor {color2.rgba};
+@define-color foregroundcolor {color7.rgba};

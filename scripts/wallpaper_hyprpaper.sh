@@ -27,7 +27,7 @@ fi
 # ----------------------------------------------------- 
 # Select random (or select) wallpaper and create color scheme
 # ----------------------------------------------------- 
-wal -q -i ~/Pictures/wallpaper/$selected
+wal -q -i ~/Pictures/wallpaper/$selected -a 70
 
 # ----------------------------------------------------- 
 # Load current pywal color scheme
@@ -47,8 +47,7 @@ newwall=$(echo $wallpaper | sed "s|$HOME/Pictures/wallpaper/||g")
 # ----------------------------------------------------- 
 # Set the new wallpaper
 # ----------------------------------------------------- 
-hyprctl hyprpaper preload $wallpaper
-hyprctl hyprpaper wallpaper ",$wallpaper"
+hyprctl hyprpaper reload ,"$wallpaper"
 
 # ----------------------------------------------------- 
 # Send notification
@@ -60,7 +59,7 @@ notify-send "Colors and Wallpaper updated" "with image $newwall"
 # ----------------------------------------------------- 
 if [[ "$1" == "update" || "$2" == "update" ]]; then
     # restart waybar
-    ~/dotfiles/waybar/launch.sh
+    systemctl --user restart waybar-hyprland
     notify-send "Waybar has been restarted."
 fi
 
